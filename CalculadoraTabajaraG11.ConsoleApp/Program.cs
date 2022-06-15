@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 
 namespace CalculadoraTabajaraG11.ConsoleApp
 {
@@ -7,6 +8,9 @@ namespace CalculadoraTabajaraG11.ConsoleApp
     public class Program
     {
         //2º Deve realizar operações de subtração
+
+        static List<string> historico = new List<string>();
+
         static void Main(string[] args)
         {
             string opcao;
@@ -24,8 +28,10 @@ namespace CalculadoraTabajaraG11.ConsoleApp
                 Console.WriteLine("Digite 1 para realizar operações de Adição\n");
 
                 Console.WriteLine("Digite 2 para realizar operações de Subtração\n");
-                
+
                 Console.WriteLine("Digite 3 para realizar operações de Multiplicação\n");
+
+                Console.WriteLine("Digite 5 para mostrar o histórico das operações\n");
 
                 Console.WriteLine("Digite S para sair\n");
 
@@ -51,15 +57,35 @@ namespace CalculadoraTabajaraG11.ConsoleApp
 
                 Console.WriteLine("Calculadora Tabajara\n");
 
-                string operacao = "";
+                string operacao = "", simbolo = "";
 
                 switch (opcao)
                 {
-                    case "1": operacao = "Adição"; break;
+                    case "1": operacao = "Adição"; simbolo = "+"; break;
 
-                    case "2": operacao = "Subtração"; break;
-                    
-                    case "3": operacao = "Multiplicação"; break;
+                    case "2": operacao = "Subtração"; simbolo = "-"; break;
+
+                    case "3": operacao = "Multiplicação"; simbolo = "*"; break;
+
+                    case "5":
+
+                        Console.Clear();
+
+                        Console.WriteLine("Calculadora Tabajara\n");
+
+                        Console.WriteLine("Historico de operações realizadas\n");
+
+                        if (historico.Count > 0)
+                            foreach (var item in historico)
+                                Console.WriteLine(item);
+                        else
+                            Console.WriteLine("Nenhuma operação realizada ainda!");
+
+                        Console.ReadLine();
+
+                        continue;
+
+                        break;
 
                     default: break;
                 }
@@ -81,11 +107,15 @@ namespace CalculadoraTabajaraG11.ConsoleApp
                     case "1": resultado = primeiroNumero + segundoNumero; break;
 
                     case "2": resultado = primeiroNumero - segundoNumero; break;
-                    
+
                     case "3": resultado = primeiroNumero * segundoNumero; break;
 
                     default: break;
                 }
+
+                string operacaoAtual = $"{primeiroNumero} {simbolo} {segundoNumero} = {resultado}";
+
+                historico.Add(operacaoAtual);
 
                 #endregion
 
