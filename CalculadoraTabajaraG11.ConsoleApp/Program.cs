@@ -21,8 +21,6 @@ namespace CalculadoraTabajaraG11.ConsoleApp
 
                 Console.WriteLine("Tela Principal\n");
 
-                Console.WriteLine("Digite 1 para realizar operações de Adição\n");
-
                 Console.WriteLine("Digite 2 para realizar operações de Subtração\n");
 
                 Console.WriteLine("Digite S para sair\n");
@@ -33,6 +31,13 @@ namespace CalculadoraTabajaraG11.ConsoleApp
 
                 if (opcao.Equals("s", StringComparison.OrdinalIgnoreCase))
                     break;
+
+                if (opcao != "1" && opcao != "2" && opcao != "3" && opcao != "4" && opcao != "5")
+                {
+                    Console.WriteLine("Por favor, digite uma opção válida!");
+                    Console.ReadLine();
+                    continue;
+                }
 
                 #endregion
 
@@ -46,9 +51,6 @@ namespace CalculadoraTabajaraG11.ConsoleApp
 
                 switch (opcao)
                 {
-
-                    case "1": operacao = "Adição"; break;
-
                     case "2": operacao = "Subtração"; break;
 
                     default: break;
@@ -68,8 +70,6 @@ namespace CalculadoraTabajaraG11.ConsoleApp
 
                 switch (opcao)
                 {
-                    case "1": resultado = primeiroNumero + segundoNumero; break;
-
                     case "2": resultado = primeiroNumero - segundoNumero; break;
 
                     default: break;
