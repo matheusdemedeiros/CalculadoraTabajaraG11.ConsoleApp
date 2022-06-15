@@ -1,7 +1,9 @@
-﻿using System;
+﻿
+using System;
 
 namespace CalculadoraTabajaraG11.ConsoleApp
 {
+
     public class Program
     {
         //2º Deve realizar operações de subtração
@@ -18,6 +20,8 @@ namespace CalculadoraTabajaraG11.ConsoleApp
                 Console.WriteLine("Calculadora Tabajara\n");
 
                 Console.WriteLine("Tela Principal\n");
+
+                Console.WriteLine("Digite 1 para realizar operações de Adição\n");
 
                 Console.WriteLine("Digite 2 para realizar operações de Subtração\n");
                 
@@ -51,6 +55,8 @@ namespace CalculadoraTabajaraG11.ConsoleApp
 
                 switch (opcao)
                 {
+                    case "1": operacao = "Adição"; break;
+
                     case "2": operacao = "Subtração"; break;
                     
                     case "3": operacao = "Multiplicação"; break;
@@ -72,6 +78,8 @@ namespace CalculadoraTabajaraG11.ConsoleApp
 
                 switch (opcao)
                 {
+                    case "1": resultado = primeiroNumero + segundoNumero; break;
+
                     case "2": resultado = primeiroNumero - segundoNumero; break;
                     
                     case "3": resultado = primeiroNumero * segundoNumero; break;
