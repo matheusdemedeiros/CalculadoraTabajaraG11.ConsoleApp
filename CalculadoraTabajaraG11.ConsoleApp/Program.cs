@@ -20,6 +20,8 @@ namespace CalculadoraTabajaraG11.ConsoleApp
                 Console.WriteLine("Tela Principal\n");
 
                 Console.WriteLine("Digite 2 para realizar operações de Subtração\n");
+                
+                Console.WriteLine("Digite 3 para realizar operações de Multiplicação\n");
 
                 Console.WriteLine("Digite S para sair\n");
 
@@ -50,6 +52,8 @@ namespace CalculadoraTabajaraG11.ConsoleApp
                 switch (opcao)
                 {
                     case "2": operacao = "Subtração"; break;
+                    
+                    case "3": operacao = "Multiplicação"; break;
 
                     default: break;
                 }
@@ -69,6 +73,8 @@ namespace CalculadoraTabajaraG11.ConsoleApp
                 switch (opcao)
                 {
                     case "2": resultado = primeiroNumero - segundoNumero; break;
+                    
+                    case "3": resultado = primeiroNumero * segundoNumero; break;
 
                     default: break;
                 }
